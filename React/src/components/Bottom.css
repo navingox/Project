@@ -1,0 +1,59 @@
+.Bottom__Container{
+    position: fixed;
+    bottom: 0;
+    background-color: white;
+    width: 100vw;
+}
+
+.navbar {
+    overflow: hidden;
+    background-color: #ffffff;
+    width: 100%;
+    display:flex;
+    flex-wrap: wrap;
+    align-items:center;
+    justify-content:space-around;
+  }
+  
+  .navb{
+  width:96px;
+  height:40px;
+  border-radius: 20px;
+  position: relative;
+  }
+
+  .navbar__home{
+    background: linear-gradient(180deg, #A95EFA 0%, #8A49F7 100%);
+  }
+  .navbar__search{
+    background: linear-gradient(180deg, #A95EFA 0%, #8A49F7 100%);
+  }
+
+  .navbar__cart{
+    background: linear-gradient(180deg, #A95EFA 0%, #8A49F7 100%);
+  }
+
+  .navbar__profile{
+    background: linear-gradient(180deg, #A95EFA 0%, #8A49F7 100%);
+  }
+
+
+
+.homeicon,.searchicon,.carticon,.profileicon{
+  position: absolute;
+  left:12px;
+  top: 12px;
+}
+
+.home,.search,.cart,.profile{
+position: absolute;
+color: white;
+top: 8px;
+left:35px;
+font-family: DM Sans;
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+  }
+
+  

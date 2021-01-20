@@ -1,0 +1,42 @@
+.modal-backdrop{
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+     background-color: rgba(0, 0, 0, 0.6)!important;
+    overflow-y: initial !important;
+}
+
+
+
+.modal-content-wrapper{
+    display: flex;
+    /* justify-content: center;
+    align-items: center; */
+    position:fixed;
+    left: 10px;
+     top: 25px;
+     bottom: 50px;
+   max-width: calc(100vw - 20px);
+   max-height: calc(100vh - 20px);
+  text-align: center;
+  overflow-y: auto;
+border-radius: 16px;
+}
+
+.modal-content-wrapper::-webkit-scrollbar {
+    display: none;
+ }
+
+ .modal-backdrop::-webkit-scrollbar {
+    display: none;
+ }
+ 
+ .defaultImage{  
+     height: 300px;
+     object-fit: contain;
+     width: 300px;
+ } 
+
+
