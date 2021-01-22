@@ -1,9 +1,10 @@
 import React, { useState, useEffect,useContext } from 'react';
 import axios from './axios';
-import BottomBar from './Bottombar';
 import { useHistory } from 'react-router-dom';
 import "./main.css"
 import { CartContext } from '../context/CartContext';
+import { Row, Col } from 'antd';
+import { Card } from 'antd';
 
 const Items = (props) => {
     const [productData, SetproductData] = useState([]);
@@ -42,47 +43,44 @@ const Items = (props) => {
     return (
         <div>
 
-
-            <div className="container p-2">
-                <div className="row">
-                    <div className="col">
+            <div>
+                <Row>
+                    <Col span={24} >
                         <div className="navitem">
-                            <p onClick={handleBack}><i className="fas fa-arrow-left fa-lg" ></i></p>
-                            <h4> Listing {props.location.productData} Products...</h4>
-                            <p onClick={handleCart}><i className="fas fa-shopping-bag fa-lg"></i>{Item}</p>
+                            <h6 onClick={handleBack}><i className="fas fa-arrow-left fa-lg" ></i></h6>
+                            <h6 className="CategoryRecommended__bannerProductName">{props.location.productData}  Products</h6>
+                            <h6 onClick={handleCart}><i className="fas fa-shopping-bag fa-lg"></i></h6>
                         </div>
-                    </div>
-                </div>
+                    </Col>
+                </Row>
 
 
-                <div className="row p-2">
+                <Row justify="center">
                          <div className="mywrapper">
                         {productData.map(item => (
                         <div key={item.imageId} onClick={() => getSpecificProduct(item.groupId)}>
-                               <div className="col">
+                               <Col span={24}>
                                     <div className="Search__Cards">
-                                        <div className="card Search__card" style={{ width: "8rem" }}>
-                                            <img className="card-img-top img-fluid rounded" src={item.productImagePath} alt={item.categoryName} />
-                                            <div className="card-body">
-                                                <p className="card-text CategoryRecommended__Name">{item.categoryName}</p>
-                                                <p className="card-text">$ {item.price}</p>
-                                            </div>
-                                        </div>
-
+                                    <Card
+                                        className="Search__cards"
+                                            hoverable
+                                            style={{ width: "8rem" }}
+                                            cover={<img src={item.productImagePath} alt={item.categoryName} />}
+                                        >
+                                            <p className="card-text CategoryRecommended__Name">{item.categoryName}</p>
+                                            <p className="card-text">$ {item.price}</p>
+                                        </Card>
                                     </div>
-                                </div>
+                                </Col>
                             </div>
                     ))}
 
                     </div>
-                </div>
+                </Row>
 
 
             </div>
 
-
-                
-            <BottomBar />
             
         </div>
     );

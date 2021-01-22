@@ -1,12 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from './axios';
 import SearchBar from "material-ui-search-bar";
-import Bottombar from './Bottombar';
 import './main.css';
 import Model from './Model';
 import "./Modal.css";
 import './Search.css';
 import Bottom from './Bottom';
+import { Row, Col } from 'antd';
+import { Card } from 'antd';
+
 
 const Search = () => {
     const [searchValue, SetsearchValue] = useState('');
@@ -40,9 +42,9 @@ const Search = () => {
         <div>
 
 
-            <div className="container p-4">
-                <div className="row">
-                    <div className="col">
+            <div style={{ padding: "20px" }} >
+                <Row>
+                    <Col span={24} >
                         <SearchBar
                             value={searchValue.val}
                             placeholder="Search Products ..."
@@ -50,42 +52,41 @@ const Search = () => {
                             onRequestSearch={(newValue) => fetchSearchResult({ val: newValue })}
                             style={{ borderRadius: "20px" }}
                         />
-                    </div>
-                </div>
+                    </Col>
+                </Row>
 
 
 
-                <div className="row p-4">
-                    <div className="col">
+                <Row style={{ padding: "20px" }}>
+                    <Col span={24} >
                         <div className="SearchResultNumber">
                             {found && <h5 className="text-muted float-left">FOUND {searchResult.length} RESULTS</h5>}
                         </div>
-                    </div>
-                </div>
+                    </Col>
+                </Row>
 
 
-                <div className="row p-2">
-                    <div className="col">
-                    <div class="wrapper">
-                        {searchResult.map(item => (
-                            <div key={item.imageId} onClick={() => handleModal(item.groupId)}>
-                                <div className="col">
+                <Row justify="center" style={{ padding: "20px" }}>
+                    <Col span={24} >
+                        <div class="wrapper">
+                            {searchResult.map(item => (
+                                <div key={item.imageId} onClick={() => handleModal(item.groupId)}>
                                     <div className="Search__Cards">
-                                        <div className="card Search__card" style={{ width: "8rem" }}>
-                                            <img className="card-img-top img-fluid rounded" src={item.productImagePath} alt={item.categoryName} />
-                                            <div className="card-body">
-                                                <p className="card-text CategoryRecommended__Name">{item.categoryName}</p>
-                                                <p className="card-text">$ {item.price}</p>
-                                            </div>
-                                        </div>
-
+                                        <Card
+                                            className="Search__cards"
+                                            hoverable
+                                            style={{ width: "8rem" }}
+                                            cover={<img src={item.productImagePath} alt={item.categoryName} />}
+                                        >
+                                            <p className="card-text CategoryRecommended__Name">{item.categoryName}</p>
+                                            <p className="card-text">$ {item.price}</p>
+                                        </Card>
                                     </div>
                                 </div>
-                            </div>
-                        ))}
-                    </div>
-                    </div>
-                </div>
+                            ))}
+                        </div>
+                    </Col>
+                </Row>
                 <Model ref={modalRef}></Model>
             </div>
             <Bottom data={2} />

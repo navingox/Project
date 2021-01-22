@@ -3,6 +3,8 @@ import axios from './axios';
 import Bottombar from './Bottombar';
 import './Profile.css';
 import Bottom from './Bottom';
+import { Row, Col } from 'antd';
+import { Input } from 'antd';
 
 const Profile = () => {
     const [ProfileData, setProfileData] = useState([]);
@@ -24,42 +26,40 @@ const Profile = () => {
             <h1>Profile</h1>
             {ProfileData.map((data, index) => (
                 <div key={index}>
-                  <form>
-                        <div className="container">
-                            <div className="row">
-                                <div className="col-md-6">
-                                    <h5 htmlFor="name" className="m-2 w-25" style={{"display":"flex"}}>Name</h5>
-                                    <input type="text" className="form-control m-2" id="name" name="name" value={data.name} required />
-                                </div>
-                                <div className="col-md-6">
-                                    <h5 htmlFor="useremail" className="m-2"  style={{"display":"flex"}}>Email</h5>
+                    <form>
+                        <div>
+                            <Row >
+                                <Col span={24}>
+                                    <h5 htmlFor="name"  >Name</h5>
+                                    <input type="text" className="form-control m-2" id="name" name="name"  value={data.name}  required />
+                                    
+                                    <h5 htmlFor="useremail" className="m-2"  >Email</h5>
                                     <input type="email" className="form-control m-2" id="useremail" name="useremail" value={data.email} required />
-                                </div>
-                                <div className="col-md-6">
-                                    <h5 htmlFor="PhoneNumber" className="m-2"  style={{"display":"flex"}}>Phone Number</h5>
-                                    <input type="text" className="form-control m-2" id="PhoneNumber" name="PhoneNumber" value={data.phoneNumber} required />
-                                </div>
-                                <div className="col-md-6">
-                                    <h5 htmlFor="Address" className="m-2"  style={{"display":"flex"}}>Address</h5>
-                                    <textarea type="text" className="form-control m-2" id="Address" name="Address" rows="5" cols="10" value={data.address} required />
-                                </div>
-                                <div className="col-md-6">
-                                    <h5 htmlFor="Pincode" className="m-2"  style={{"display":"flex"}}>Pincode</h5>
-                                    <input type="number" className="form-control m-2" id="Pincode" name="Pincode" value={data.pincode} required />
-                                </div>
 
-                            </div>
-                            <div className="row p-4">
-                                <div className="col-md-6">
+
+                                    <h5 htmlFor="PhoneNumber" className="m-2"  >Phone Number</h5>
+                                    <input type="text" className="form-control m-2" id="PhoneNumber" name="PhoneNumber" value={data.phoneNumber} required />
+
+                                    <h5 htmlFor="Address" className="m-2"  >Address</h5>
+                                    <textarea type="text" className="form-control m-2" id="Address" name="Address" rows="5" cols="10" value={data.address} required />
+
+                                    <h5 htmlFor="Pincode" className="m-2"  >Pincode</h5>
+                                    <input type="number" className="form-control m-2" id="Pincode" name="Pincode" value={data.pincode} required />
+                                </Col>
+
+                            </Row>
+
+                            <Row>
+                                <Col span={12}>
                                     <button className="btn btn-primary rounded-pill" >Edit Profile</button>
-                                </div>
-                            </div>
+                                </Col>
+                            </Row>
                         </div>
                     </form>
 
                 </div>
             ))}
-            <Bottom data={4}/>
+            <Bottom data={4} />
         </div>
     )
 }

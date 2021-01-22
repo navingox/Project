@@ -1,17 +1,18 @@
-import React,{useState,useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from './axios';
 import './main.css';
 import { useHistory } from 'react-router-dom';
+import { Card } from 'antd';
 
 const Recommended = () => {
     const history = useHistory();
-    const [recommendedItems,setrecommendedItems]=useState([])
+    const [recommendedItems, setrecommendedItems] = useState([])
 
-    useEffect( ()=>{
-        axios.get('/recommended').then(res=>{
+    useEffect(() => {
+        axios.get('/recommended').then(res => {
             setrecommendedItems(res.data.data)
-    })   
-    },[])
+        })
+    }, [])
 
 
     const getRecommendedProduct = (product) => {
@@ -26,11 +27,15 @@ const Recommended = () => {
             <div className="carddecks">
                 {recommendedItems.map(item => (
                     <div key={item.imageId} onClick={() => getRecommendedProduct(item.groupId)}>
-                        <div className="card Recommended__card" style={{ width: "10rem" }}>
-                            <img className="card-img-top img-fluid" src={item.productImagePath} alt={item.categoryName} />
-                            <div className="card-body">
+                        <div className="card Recommended__card text-center" >
+                            <Card
+                            className="card Recommended__cards"
+                                style={{ width: "8rem" }}
+                                cover={<img className="card-img-top img-fluid" src={item.productImagePath} alt={item.categoryName} />}
+                            >
                                 <p className="card-text CategoryRecommended__Name">{item.categoryName}</p>
-                            </div>
+                            </Card>
+
                         </div>
                     </div>
                 ))}
