@@ -3,6 +3,7 @@ import axios from './axios';
 import './main.css';
 import { useHistory } from 'react-router-dom';
 import { Card } from 'antd';
+import ImageAxios from './ImageAxios';
 
 const Recommended = () => {
     const history = useHistory();
@@ -31,7 +32,7 @@ const Recommended = () => {
                             <Card
                             className="card Recommended__cards"
                                 style={{ width: "8rem" }}
-                                cover={<img className="card-img-top img-fluid" src={item.productImagePath} alt={item.categoryName} />}
+                                cover={<img className="card-img-top img-fluid" src={ImageAxios()+item.productImagePath} alt={item.categoryName} />}
                             >
                                 <p className="card-text CategoryRecommended__Name">{item.categoryName}</p>
                             </Card>

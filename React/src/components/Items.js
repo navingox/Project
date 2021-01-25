@@ -5,6 +5,8 @@ import "./main.css"
 import { CartContext } from '../context/CartContext';
 import { Row, Col } from 'antd';
 import { Card } from 'antd';
+import ImageAxios from './ImageAxios';
+
 
 const Items = (props) => {
     const [productData, SetproductData] = useState([]);
@@ -65,7 +67,7 @@ const Items = (props) => {
                                         className="Search__cards"
                                             hoverable
                                             style={{ width: "8rem" }}
-                                            cover={<img src={item.productImagePath} alt={item.categoryName} />}
+                                            cover={<img src={ImageAxios()+item.productImagePath} alt={item.categoryName} />}
                                         >
                                             <p className="card-text CategoryRecommended__Name">{item.categoryName}</p>
                                             <p className="card-text">$ {item.price}</p>

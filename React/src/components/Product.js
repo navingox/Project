@@ -6,6 +6,7 @@ import { useHistory } from 'react-router-dom';
 import ReactJsAlert from "reactjs-alert";
 import { CartContext } from '../context/CartContext';
 import './Modal.css';
+import ImageAxios from './ImageAxios';
 
 const Product = (props) => {
     const [productData, SetproductData] = useState([]);
@@ -88,7 +89,7 @@ const Product = (props) => {
                                                                     </div>
 
                                                              <div className="ImageContainer">
-                                                             <img src={item.productImagePath} className="img-fluid" alt="Responsive image" />
+                                                             <img src={ImageAxios()+item.productImagePath} className="img-fluid" alt="Responsive image" />
                                                              </div>
                                                          
                                                          </div>

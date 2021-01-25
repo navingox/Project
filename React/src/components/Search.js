@@ -8,7 +8,7 @@ import './Search.css';
 import Bottom from './Bottom';
 import { Row, Col } from 'antd';
 import { Card } from 'antd';
-
+import ImageAxios from './ImageAxios';
 
 const Search = () => {
     const [searchValue, SetsearchValue] = useState('');
@@ -68,7 +68,7 @@ const Search = () => {
 
                 <Row justify="center" style={{ padding: "20px" }}>
                     <Col span={24} >
-                        <div class="wrapper">
+                        <div className="wrapper">
                             {searchResult.map(item => (
                                 <div key={item.imageId} onClick={() => handleModal(item.groupId)}>
                                     <div className="Search__Cards">
@@ -76,7 +76,7 @@ const Search = () => {
                                             className="Search__cards"
                                             hoverable
                                             style={{ width: "8rem" }}
-                                            cover={<img src={item.productImagePath} alt={item.categoryName} />}
+                                            cover={<img src={ImageAxios()+item.productImagePath} alt={item.categoryName} />}
                                         >
                                             <p className="card-text CategoryRecommended__Name">{item.categoryName}</p>
                                             <p className="card-text">$ {item.price}</p>

@@ -8,12 +8,14 @@ import { CartContext } from '../context/CartContext';
 import './Cart.css';
 import Bottom from './Bottom';
 import { Row, Col } from 'antd';
+import ImageAxios from './ImageAxios';
 
 const useStyles = makeStyles({
     root: {
         maxWidth: 300,
     },
 });
+
 
 const Cart = () => {
     const classes = useStyles();
@@ -50,7 +52,7 @@ const Cart = () => {
             console.log(res.data.data);
             SetrefreshCart("refreshthecart");
             setItem(orderedProducts.length);
-        })
+        }) 
     }
 
 
@@ -84,19 +86,22 @@ const Cart = () => {
     return (
         <div>
             <h1>Cart Page</h1>
-            <h4>Items in Cart</h4>
+            <div className="cartTotalPrice" >
+                      <h4>Items in Cart</h4>
+                      <h4 className="rounded-pill">Total Price : ${Prices}</h4>
+                </div>
             <div>
                 <Row>
                     <Col className="text-center">
                         {
                             refreshCart && orderedProducts.map((order, index) => (
                                 <div key={index} className="cartComponent">
-                                    <Card title="Card title" bordered={false} style={{ width: "300px",height:"330px" }}>
+                                    <Card title="Card title" style={{ width: "300px",height:"330px" }}>
                                         <div style={{ display: "flex", flexDirection: "row-reverse" }}>
 
                                             <Button size="small" style={{ color: "red" }} onClick={() => handleDeleteCart(order.productId)}><i className="fa fa-trash fa-lg" aria-hidden="true"></i>&nbsp;Remove</Button>
                                         </div>
-                                        <img src={order.productImagePath} alt={order.categoryName} />
+                                        <img src={ImageAxios()+order.productImagePath} alt={order.categoryName} />
 
                                         <div style={{padding:"8px"}}>
                                             <h5 size="small" color="primary">
@@ -119,9 +124,8 @@ const Cart = () => {
                         }
                     </Col>
                 </Row>
-                <h1 className="btn btn-success rounded-pill p-2 mt-5">Total Price : ${Prices}</h1>
-                <div className="cartTotal" >
-                </div>
+               
+                
             </div>
             <Bottom data={3} />
         </div>

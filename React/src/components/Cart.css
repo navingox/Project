@@ -1,7 +1,8 @@
-/* .cart{
-    display: none;
+.cartTotalPrice{
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: space-around;
+height: 50px;
+width: 100vw;
 }
-
-.navbar__cart{
-    background: linear-gradient(180deg, #A95EFA 0%, #8A49F7 100%);
-} */

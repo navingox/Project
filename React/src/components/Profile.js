@@ -26,30 +26,30 @@ const Profile = () => {
             <h1>Profile</h1>
             {ProfileData.map((data, index) => (
                 <div key={index}>
-                    <form>
+                    <form className="p-2">
                         <div>
-                            <Row >
+                            <Row justify="center">
                                 <Col span={24}>
-                                    <h5 htmlFor="name"  >Name</h5>
-                                    <input type="text" className="form-control m-2" id="name" name="name"  value={data.name}  required />
+                                    <h5 htmlFor="name" >Name</h5>
+                                    <input type="text" className="form-control" id="name" name="name"  value={data.name}  required />
                                     
-                                    <h5 htmlFor="useremail" className="m-2"  >Email</h5>
-                                    <input type="email" className="form-control m-2" id="useremail" name="useremail" value={data.email} required />
+                                    <h5 htmlFor="useremail" >Email</h5>
+                                    <input type="email" className="form-control" id="useremail" name="useremail" value={data.email} required />
 
 
-                                    <h5 htmlFor="PhoneNumber" className="m-2"  >Phone Number</h5>
-                                    <input type="text" className="form-control m-2" id="PhoneNumber" name="PhoneNumber" value={data.phoneNumber} required />
+                                    <h5 htmlFor="PhoneNumber"   >Phone Number</h5>
+                                    <input type="text" className="form-control" id="PhoneNumber" name="PhoneNumber" value={data.phoneNumber} required />
 
-                                    <h5 htmlFor="Address" className="m-2"  >Address</h5>
-                                    <textarea type="text" className="form-control m-2" id="Address" name="Address" rows="5" cols="10" value={data.address} required />
+                                    <h5 htmlFor="Address"   >Address</h5>
+                                    <textarea type="text" className="form-control" id="Address" name="Address" rows="5" cols="10" value={data.address} required />
 
-                                    <h5 htmlFor="Pincode" className="m-2"  >Pincode</h5>
-                                    <input type="number" className="form-control m-2" id="Pincode" name="Pincode" value={data.pincode} required />
+                                    <h5 htmlFor="Pincode"   >Pincode</h5>
+                                    <input type="number" className="form-control" id="Pincode" name="Pincode" value={data.pincode} required />
                                 </Col>
 
                             </Row>
 
-                            <Row>
+                            <Row justify="center" className="p-2">
                                 <Col span={12}>
                                     <button className="btn btn-primary rounded-pill" >Edit Profile</button>
                                 </Col>

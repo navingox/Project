@@ -156,8 +156,8 @@
     position: relative;
      left: calc(50% - 20px);
      top: 20%;
-    height: 200px;
-    width: 200px;
+    height: 150px;
+    width: 150px;
     object-fit: contain;
 }
 

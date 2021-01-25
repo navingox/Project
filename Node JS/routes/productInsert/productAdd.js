@@ -17,7 +17,7 @@ const upload = multer({ storage: storage })
 
 router.post('/', upload.single('photo'), (req, res) => {
 
-    const fileName = "http://localhost:8000/" + req.file.filename;
+    const fileName = req.file.filename;
     const { CategoryName, productName, categoryItems , productDescription ,price, groupId , imageColor} = req.body;
 
     const insertQuery = `insert into products (CategoryName,productImagePath,productName,categoryItems,productDescription,price,groupId,imageColor) values('${CategoryName}','${fileName}','${productName}','${categoryItems}','${productDescription}','${price}','${groupId}','${imageColor}');`;
