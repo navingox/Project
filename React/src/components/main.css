@@ -368,3 +368,9 @@ color: #171717;
      align-items: center;
      justify-content: space-around;
  }
+
+ .AddProduct__Container{
+     display: grid;
+     justify-content:center;
+     align-items: center;
+ }

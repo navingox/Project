@@ -61,7 +61,8 @@ const Model = forwardRef((props, ref) => {
     }
 
     return (
-        <AnimatePresence>
+        <div className="Modal__Center">
+            <AnimatePresence>
             {open && <div>
                 <motion.div
                     initial={{
@@ -143,8 +144,8 @@ const Model = forwardRef((props, ref) => {
 
                                                
                                                     <div className="row">
-                                                        <div className="col-sm-5 text-center">
-                                                            <button className="form-control rounded-pill text-center text-white" style={{ backgroundColor: "#8A2BE2", height: "40px" }} onClick={() => handleCartEvent(index)} ><b>ADD TO CART</b></button>
+                                                        <div className="col text-center">
+                                                            <button className="rounded-pill text-center text-white mybutton" style={{ backgroundColor: "#8A2BE2", height: "40px" }} onClick={() => handleCartEvent(index)} ><b>ADD TO CART</b></button>
                                                         </div>
                                                     </div>
                                                
@@ -172,6 +173,7 @@ const Model = forwardRef((props, ref) => {
                 </motion.div>
             </div>}
         </AnimatePresence>
+        </div>
     );
 }
 );

@@ -55,7 +55,7 @@ const AddProduct = () => {
 
 
   return (
-    <div>
+    <div className="AddProduct__Container">
       <h1>Add Product Route</h1>
       <div className="container">
 

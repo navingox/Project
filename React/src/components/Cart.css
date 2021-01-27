@@ -6,3 +6,10 @@ justify-content: space-around;
 height: 50px;
 width: 100vw;
 }
+
+
+@media only screen and (min-width: 660px) {
+    .Cart__Responsive{
+        display: flex;
+    }
+}

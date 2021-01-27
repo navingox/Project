@@ -22,7 +22,7 @@ const Profile = () => {
     }
 
     return (
-        <div>
+        <div className="Profile__Form">
             <h1>Profile</h1>
             {ProfileData.map((data, index) => (
                 <div key={index}>
@@ -37,7 +37,7 @@ const Profile = () => {
                                     <input type="email" className="form-control" id="useremail" name="useremail" value={data.email} required />
 
 
-                                    <h5 htmlFor="PhoneNumber"   >Phone Number</h5>
+                                    <h5 htmlFor="PhoneNumber">Phone Number</h5>
                                     <input type="text" className="form-control" id="PhoneNumber" name="PhoneNumber" value={data.phoneNumber} required />
 
                                     <h5 htmlFor="Address"   >Address</h5>

@@ -104,7 +104,7 @@ const Product = (props) => {
 
                                                 <div className="container p-4">
                                                     <div className="row">
-                                                        <div className="col-sm-5 text-center">
+                                                        <div className="col text-center">
                                                             <button className="form-control rounded-pill text-center text-white" style={{ backgroundColor: "#8A2BE2", height: "50px" }} onClick={() => handleCartEvent(index)} ><b>ADD TO CART</b></button>
                                                         </div>
                                                     </div>

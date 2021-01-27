@@ -43,7 +43,7 @@ const Search = () => {
 
 
             <div style={{ padding: "20px" }} >
-                <Row>
+                <Row justify="center">
                     <Col span={24} >
                         <SearchBar
                             value={searchValue.val}
@@ -65,7 +65,7 @@ const Search = () => {
                     </Col>
                 </Row>
 
-
+ 
                 <Row justify="center" style={{ padding: "20px" }}>
                     <Col span={24} >
                         <div className="wrapper">

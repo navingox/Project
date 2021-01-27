@@ -5,3 +5,15 @@
 .navbar__profile{
     background: linear-gradient(180deg, #A95EFA 0%, #8A49F7 100%);
 } */
+
+@media only screen and (min-width: 960px) {
+    form{
+        height: 50vh;
+        width: 50vw;
+    }
+    .Profile__Form{
+        display: grid;
+        justify-content: center;
+        align-items: center;
+    }
+}

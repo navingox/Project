@@ -6,7 +6,7 @@ import { CartContext } from '../context/CartContext';
 import { Row, Col } from 'antd';
 import { Card } from 'antd';
 import ImageAxios from './ImageAxios';
-
+import "./Items.css";
 
 const Items = (props) => {
     const [productData, SetproductData] = useState([]);
@@ -62,9 +62,9 @@ const Items = (props) => {
                         {productData.map(item => (
                         <div key={item.imageId} onClick={() => getSpecificProduct(item.groupId)}>
                                <Col span={24}>
-                                    <div className="Search__Cards">
+                                    <div className="Item__Cards">
                                     <Card
-                                        className="Search__cards"
+                                        className="Item__cards"
                                             hoverable
                                             style={{ width: "8rem" }}
                                             cover={<img src={ImageAxios()+item.productImagePath} alt={item.categoryName} />}

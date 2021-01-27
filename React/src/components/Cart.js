@@ -93,6 +93,7 @@ const Cart = () => {
             <div>
                 <Row>
                     <Col className="text-center">
+                        <div className="Cart__Responsive">
                         {
                             refreshCart && orderedProducts.map((order, index) => (
                                 <div key={index} className="cartComponent">
@@ -122,6 +123,7 @@ const Cart = () => {
                                 </div>
                             ))
                         }
+                        </div>
                     </Col>
                 </Row>
                
